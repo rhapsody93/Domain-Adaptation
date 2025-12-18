@@ -17,6 +17,7 @@ This structure in which hostile losses are directly reflected in learning backbo
 <img width="1065" height="669" alt="image" src="https://github.com/user-attachments/assets/5a2d448b-020b-49f3-af6e-732e7ce7991a" />
 
 
+
 2. Unsupervised Domain Adaptation using Self-Training
 
 <img width="331" height="80" alt="image" src="https://github.com/user-attachments/assets/e00388b8-eb95-4d04-aa5a-eefbd22dc0d6" />
@@ -24,14 +25,13 @@ This structure in which hostile losses are directly reflected in learning backbo
 Domain adaptation (DA) is transfer learning, which reduces domain shifts between various weather conditions. Self-training, the first domain adaptation technique, is performed based on Unsupervised Domain Adaptation (UDA). After generating pseudo labels for unlabeled Target Domain through the model learned from the Source Domain, the model learns repeatedly by using pseudo labels as the actual labels of Target Domain data. We trained labeled Source Domain training data (7,000 images, 7,000 labels) with a Source-only model and applied filtering on target Domain training data (7,000 images, 7,000 labels) with a confidence threshold of 0.6 or higher to generate a total of 6,584 pseudo labels. Integrated data (14,000 images, 13,584 labels) combined with Source Domain and Target Domain are input to retrain the model.
 
 
+
 3. Weather-aware Pseudo-Lableing with Uncertainty Calibration
 
 This study proposes a weather-aware self-training framework that leverages Monte Carlo Dropout (MC Dropout)-based Bayesian approximation to quantitatively estimate model prediction uncertainty and directly incorporate it into the pseudo-label generation process.
 MC Dropout activates dropout layers during inference, enabling multiple stochastic forward passes for the same input. By computing the mean and variance of the prediction distribution, the model uncertainty can be effectively estimated, allowing a quantitative assessment of prediction reliability for each input sample.
 
-
 <img width="378" height="223" alt="image" src="https://github.com/user-attachments/assets/333f2fc7-2a09-45f5-b14f-236618d4b616" />
-
 
 The proposed method jointly considers the following uncertainty measures:
 
